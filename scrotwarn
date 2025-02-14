@@ -1,0 +1,8 @@
+#!/bin/bash
+yad --center --text="Are you sure you would like to take a screenshot?" --button="OK":0 --button="Cancel":1 --skip-taskbar --borders=2 --title="Screenshot"
+RETURN=$?
+if [[ $RETURN -eq 0 ]]; then
+    scrot
+else
+    echo $RETURN
+fi
